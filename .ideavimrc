@@ -1,0 +1,140 @@
+
+
+" https://github.com/JetBrains/ideavim/blob/master/src/main/java/com/maddyhome/idea/vim/package-info.java
+" :actionlist <--- run this!
+
+
+
+
+
+
+
+set number
+set relativenumber
+set nu
+set smartcase
+set showmode
+set ideajoin
+set highlightedyank
+set hlsearch
+set incsearch
+set surround
+set NERDTree
+set clipboard+=unnamed
+
+set ReplaceWithRegister
+" [count]["x]grr :Replace [count] lines with the contents of register x
+" {Visual}["x]gr :Replace the selection with the contents of register x
+
+set commentary
+" gcc: Comment current line
+" gc + motion: Comment using the motion
+" gc: Comment selected text
+
+" sethandler <C-Home> a:ide
+" sethandler <C-End> a:ide
+
+let mapleader = ";"
+nnoremap Y y$
+
+nnoremap <C-Home> :action GotoPreviousBookmark<CR>
+nnoremap <C-End> :action GotoNextBookmark<CR>
+
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+
+"--------------- Number row "
+map <leader>1  :NERDTree<CR>
+nnoremap <leader>2 :action ActivateBookmarksToolWindow<CR>
+nnoremap <leader>3 :action ActivateTODOToolWindow<CR>
+nnoremap <leader>4 :action ActivateEndpointsToolWindow<CR>
+nnoremap <leader>5 :action ActivateServicesToolWindow<CR>
+nnoremap <leader>7 :action ActivateStructureToolWindow<CR>
+
+"--------------- Top row "
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>e :action RecentFiles<CR>
+nnoremap <leader>r :action RunClass<CR>
+nnoremap <leader>t :action FileStructurePopup<CR>
+nnoremap <leader>T :action FileStructurePopup<CR>
+
+"nnoremap <leader>y :action <CR>
+nnoremap <leader>u <C-u><CR>
+nnoremap <leader>i :action ToggleBookmark<CR>
+nnoremap <leader>o :action OpenFile<CR>
+nnoremap <leader>p :action $Paste<CR>
+
+nnoremap ]] :action MethodDown<CR>
+nnoremap [[ :action MethodUp<CR>
+
+"--------------- Middle row "
+"nnoremap <leader>a :action ActivateEndpointsToolWindow<CR>
+"nnoremap <leader>s :action ActivateFindToolWindow<CR>
+nnoremap <leader>s :action FindInPath<CR>
+nnoremap <leader>d <C-d><CR>
+nnoremap <leader>f :action Forward<CR>
+nnoremap <leader>g :action $SearchWeb<CR>
+nnoremap <leader>h :action CommentByLineComment<CR>
+nnoremap <leader>j :action GotoPreviousBookmark<CR>
+nnoremap <leader>k :action GotoNextBookmark<CR>
+nnoremap <leader>l :action JumpToNextChange<CR>
+nnoremap <leader>; :action JumpToLastChange<CR>
+
+"-------------- Bottom row "
+"nnoremap <leader>z :action <CR>
+"nnoremap <leader>x :action <CR>
+nnoremap <leader>c :action GotoClass<CR>
+"nnoremap <leader>v :action <CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>B :action Bookmarks<CR>
+nnoremap <leader>n <C-Tab><CR>
+nnoremap <leader>m :action ShowBookmarks<CR>
+nnoremap <leader>M :marks<CR>
+nnoremap <leader>. :action ToggleLineBreakpoint<CR>
+nnoremap <leader>/ :noh<CR>
+
+"--------------- G actions (G as in goto.... idk, that was the idea.)"
+nnoremap ge :action SearchEverywhere<CR>
+nnoremap gu :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+
+"let g:highlightedyank_highlight_color = "rgba(240,240,160,155)"
+
+nmap n nzz
+nmap N Nzz
+
+" Run                                                <S-F10>
+" RunAnything
+" RunClass                                           <C-S-F10> <A-R>
+" RunConfiguration
+" RunConfigurationTemplatesForNewProjects
+" RunContextGroup
+" RunContextGroupInner
+" RunContextGroupMore
+" RunContextPopupGroup
+" RunCoverage
+" RunDashboard.AddType
+" RunDashboard.ClearContent
+" RunDashboard.CopyConfiguration                     <C-D>
+" RunDashboard.Debug                                 <F1>
+" RunDashboard.EditConfiguration                     <S-F4>
+" RunDashboard.Filter
+" RunDashboard.GroupBy
+" RunDashboard.GroupByStatus
+" RunDashboard.GroupByType
+" RunDashboard.GroupConfigurations
+" RunDashboard.HideConfiguration
+" RunDashboard.OpenRunningConfigInNewTab
+" RunDashboard.RemoveType
+" RunDashboard.RestoreConfiguration
+" RunDashboard.RestoreHiddenConfigurations
+" RunDashboard.Run                                   <C-S-F10> <A-R>
+" RunDashboard.Stop                                  <C-F2>
+" RunDashboard.UngroupConfigurations                 <Del> <A-Y>
+" RunDashboardContentToolbar
+" RunDashboardPopup
+" RunInspection                                      <A-C-S-I>
+" RunInspectionOn
+" RunJsbtTask                                        <A-F11>
+" RunMenu
